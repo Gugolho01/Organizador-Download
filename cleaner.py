@@ -3,6 +3,7 @@ import os, shutil, pathlib, fnmatch
 # Movendo pasta
 
 def move_dir(src: str, dst: str, pattern: str = '*.'):
+        pattern = '*.' + pattern
         if not os.path.isdir(dst):
             pathlib.Path(dst).mkdir(parents=True, exist_ok=True)
         for f in fnmatch.filter(os.listdir(src), pattern):
