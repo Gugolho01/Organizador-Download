@@ -1,4 +1,4 @@
-import Bibli
+import cleaner
 
 Bibli.orgArq('abr', 'cm', 'arquivo')
 Bibli.orgAud('mp3')
