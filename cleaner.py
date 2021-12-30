@@ -1,8 +1,8 @@
 import os, shutil, pathlib, fnmatch
 
-# Movendo pasta
+# Movendo pasta e cria a pasta
 
-def move_dir(src: str, dst: str, pattern: str = '*.'):
+def move_dir(src: str, dst: str, pattern: str = '*'):
         pattern = '*.' + pattern
         if not os.path.isdir(dst):
             pathlib.Path(dst).mkdir(parents=True, exist_ok=True)
@@ -23,30 +23,31 @@ def oenu(source, destination, all):
     while o < len(all):
         move_dir(source, destination, all[o])
         o = o + 1
+
 # Img
 
 def orgImg(*all):
     # crinando pasta
-    newpath = r'..\..\Downloads\Imagens' 
-
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-
+    
     destination = r'..\..\Downloads\Imagens'
     source = r'..\..\Downloads'
 
     oenu(source, destination, all)
 
+# Text
+
+def orgTxt(*all):
+    # crinando pasta
+
+    destination = r'..\..\Downloads\Text'
+    source = r'..\..\Downloads'
+
+    oenu(source, destination, all)
 
 # Adobe
 
 def orgAdo(*all):
     # crinando pasta
-    newpath = r'..\..\Adobe' 
-
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-
     # Destino
     destination = r'..\..\Downloads\Adobe'
     source = r'..\..\Downloads'
@@ -59,12 +60,7 @@ def orgAdo(*all):
 def orgArq(*all):
     
     # crinando pasta
-    newpath = r'..\..\Downloads\Arquivos' 
-
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-
-    destination = r'..\..\Downloads\Arquivos'
+    destination = r'..\..\Downloads\Files'
     source = r'..\..\Downloads'
 
     oenu(source, destination, all)
@@ -73,11 +69,6 @@ def orgArq(*all):
 
 def orgAud(*all):
     # crinando pasta
-    newpath = r'..\..\Áudio' 
-
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-
     destination = r'..\..\Downloads\Áudio'
     source = r'..\..\Downloads'
 
@@ -87,11 +78,6 @@ def orgAud(*all):
 
 def orgVid(*all):
     # crinando pasta
-    newpath = r'..\..\Downloads\Vídeos' 
-
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-
     destination = r'..\..\Downloads\Vídeos'
     source = r'..\..\Downloads'
 
@@ -101,12 +87,7 @@ def orgVid(*all):
 
 def orgRaR(*all):
     # crinando pasta
-    newpath = r'..\..\Downloads\Arquivos WinRaR' 
-
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-
-    destination = r'..\..\Downloads\Arquivos WinRaR'
+    destination = r'..\..\Downloads\Files WinRaR'
     source = r'..\..\Downloads'
 
     oenu(source, destination, all)
@@ -115,11 +96,6 @@ def orgRaR(*all):
 
 def orgTor(*all):
     # crinando pasta
-    newpath = r'..\..\Downloads\Torrent' 
-
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-
     destination = r'..\..\Downloads\Torrent'
     source = r'..\..\Downloads'
 
@@ -129,12 +105,7 @@ def orgTor(*all):
 
 def orgApp(*all):
     # crinando pasta
-    newpath = r'..\..\Downloads\Aplicativos' 
-
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-
-    destination = r'..\..\Downloads\Aplicativos'
+    destination = r'..\..\Downloads\Application'
     source = r'..\..\Downloads'
 
     oenu(source, destination, all)
@@ -143,12 +114,34 @@ def orgApp(*all):
 
 def orgCod(*all):
     # crinando pasta
-    newpath = r'..\..\Downloads\Code' 
-
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
-
     destination = r'..\..\Downloads\Code'
+    source = r'..\..\Downloads'
+
+    oenu(source, destination, all)
+
+# Pdf
+
+def orgPdf(*all):
+    # crinando pasta
+    destination = r'..\..\Downloads\Pdf'
+    source = r'..\..\Downloads'
+
+    oenu(source, destination, all)
+
+# Document
+
+def orgDoc(*all):
+    # crinando pasta
+    destination = r'..\..\Downloads\Word'
+    source = r'..\..\Downloads'
+
+    oenu(source, destination, all)
+
+# planilha
+
+def orgSpr(*all):
+    # crinando pasta
+    destination = r'..\..\Downloads\Spreadsheet'
     source = r'..\..\Downloads'
 
     oenu(source, destination, all)
